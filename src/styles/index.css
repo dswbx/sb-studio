@@ -1,0 +1,64 @@
+@import "./font.css";
+@import "tailwindcss";
+@import "./dark.css";
+
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+   --font-custom: "CustomFont", "Circular", "Helvetica Neue", "Helvetica", Arial,
+      sans-serif;
+   --font-source-code-pro: "Source Code Pro", "Office Code Pro", Menlo,
+      monospace;
+   --color-background: #171717;
+   --color-foreground: #fff;
+
+   --color-border-default: hsl(var(--sb-color-border-default));
+   --color-stronger: hsl(var(--sb-color-border-stronger));
+   --color-foreground: hsl(var(--sb-color-foreground-default));
+   --color-foreground-light: hsl(var(--sb-color-foreground-light));
+   --color-foreground-lighter: hsl(var(--sb-color-foreground-lighter));
+   --color-background-alternative: hsl(
+      var(--sb-color-background-alternative-default)
+   );
+   --color-background-muted: hsl(var(--sb-color-background-muted));
+   --color-border-selection: hsl(var(--sb-color-background-selection));
+   --color-warning: hsl(var(--sb-color-warning-default));
+   --color-warning-500: hsl(var(--sb-color-warning-500));
+
+   /* sidebar */
+   --color-sidebar-accent: hsl(var(--sb-color-background-selection));
+   --color-sidebar-accent-foreground: hsl(var(--sb-color-foreground-default));
+   --color-sidebar-border: hsl(var(--sb-color-border-default));
+   --color-sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+@layer base {
+   * {
+      @apply border-border-default;
+   }
+}
+
+@utility bg-muted {
+   background-color: var(--color-background-muted);
+}
+
+@utility bg-alternative {
+   background-color: var(--color-background-alternative);
+}
+
+html,
+body {
+   @apply h-full w-full bg-background text-foreground font-custom;
+   font-size: 1rem;
+   line-height: 1.5;
+   font-synthesis-weight: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+   @apply h-screen w-screen;
+}
