@@ -64,7 +64,7 @@ export default function App() {
                </Button>
             </div>
          </header>
-         <main className="flex h-full">
+         <main className="flex h-full ">
             <div className="flex flex-col border-r h-full">
                <SidebarProvider>
                   <SidebarContent className="p-2 gap-0.5">
@@ -79,6 +79,14 @@ export default function App() {
                      <SidebarItem Icon={Settings} />
                   </SidebarContent>
                </SidebarProvider>
+            </div>
+            <div className="w-72 border-r">
+               <div className="px-5 py-3 border-b">
+                  <h3 className="text-lg font-medium">Table Editor</h3>
+               </div>
+            </div>
+            <div className="bg-[#121212] flex flex-1 flex-col items-center justify-center">
+               <span className="opacity-50">main content</span>
             </div>
          </main>
       </>

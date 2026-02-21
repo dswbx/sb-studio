@@ -299,8 +299,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                               {_iconLeft}
                            </div>
                         ) : null),
+                     // @ts-ignore
                      children?.props?.children && (
                         <span className={"truncate"}>
+                           {/* @ts-ignore */}
                            {children?.props?.children}
                         </span>
                      ),
